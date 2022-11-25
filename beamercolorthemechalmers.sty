@@ -1,5 +1,13 @@
 \definecolor{gublue}{HTML}{194461} % As per pptx template
 %\definecolor{gublue}{HTML}{004b89} % As per style guide, but too bright
+\definecolor{chalmerscopper}{HTML}{006c5c}
+
+
+\if@copper%
+\colorlet{MAINCOLOR}{chalmerscopper}
+\else%
+\colorlet{MAINCOLOR}{gublue}
+\fi
 
 \mode<presentation>
 
@@ -11,7 +19,7 @@
 \setbeamercolor*{date}{fg=white}
 
 % Frame
-\setbeamercolor*{frametitle}{bg=gublue, fg=white}
+\setbeamercolor*{frametitle}{bg=MAINCOLOR, fg=white}
 \setbeamercolor*{date in head/foot}{bg=white, fg=black}
 
 % Normal Text
@@ -21,7 +29,7 @@
 \setbeamercolor*{structure}{bg=white, fg=black}
 
 % Blocks
-\setbeamercolor*{block title}{bg=gublue, fg=white}
+\setbeamercolor*{block title}{bg=MAINCOLOR, fg=white}
 
 % Alerted
 \setbeamercolor{block title alerted}{fg=red_dark, bg=red_light}
@@ -39,14 +47,27 @@
 \setbeamercolor{theorem body}{bg=grey_light}
 \mode <all>
 
+
+
+
+
 % Patch \maketitle to change title slide bg (and do some other sketchy stuff)
 \let\oldmaketitle\maketitle
 \renewcommand{\maketitle}{%
-\setbeamercolor*{background canvas}{bg=gublue}%
-\setbeamercolor*{date in head/foot}{bg=gublue, fg=gublue}
-\ifx\inserttitlegraphic\@empty%
-\titlegraphic{\includegraphics[height=2em]{figures/logo_w}}%
-\fi
+\setbeamercolor*{background canvas}{bg=MAINCOLOR}%
+\setbeamercolor*{date in head/foot}{bg=MAINCOLOR, fg=MAINCOLOR}
+% \ifx\inserttitlegraphic\@empty%
+% \if@chalmers%
+% \if@simpleLogo%
+% \titlegraphic{\includegraphics[height=3em]{figures/chalmers_w}}%
+% \else%
+% \titlegraphic{\includegraphics[height=3em]{figures/chalmers_a_w}}%
+% \fi%
+% \fi%
+% \if@guChalmers
+% \titlegraphic{\includegraphics[height=2em]{figures/gu_chalmers_w}}%
+% \fi
+% \fi
 {\setbeamertemplate{logo}{}\oldmaketitle}%
 \setbeamercolor*{background canvas}{bg={}}%
 \setbeamercolor*{date in head/foot}{bg=white, fg=black}
