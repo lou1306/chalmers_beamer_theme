@@ -1,8 +1,8 @@
-# Chalmers beamer theme
+# Chalmers/GU beamer theme
 
-A LaTeX beamer theme aiming to be consistent with the [chalmers design manual](https://www.chalmers.se/SiteCollectionDocuments/om%20chalmers%20dokument/Grafisk%20profil/Chalmers%20Design%20Manual%201.0_eng.pdf).
-
-**This is work in progress.**
+A fork of [simonpf/chalmers_beamer_theme](https://github.com/simonpf/chalmers_beamer_theme)
+that tries to imitate the most recent presentation templates from University of
+Gothenburg (GU) and Chalmers
 
 ## Installation
 
@@ -23,3 +23,14 @@ After installation, the package can be used by simply calling the `\usetheme` co
 \usetheme{chalmers}
 ...
 ```
+## Options
+
+Options `gu`, `chalmers`, and `gu_chalmers` set up the title graphic and logo.
+These may be customized, as the template now honours the Beamer commands
+`\logo{}` and `\titlegraphic{}`.
+
+Option `simple_logo`, when used with `chalmers`, loads a logo without the
+"Avancez" emblem. It has no effect when used with `gu` or `gu_chalmers`.
+
+Option `copper` uses "Chalmers copper" as the main colour; the default is to
+use a shade of dark blue coming from GU and Chalmers PowerPoint templates.
