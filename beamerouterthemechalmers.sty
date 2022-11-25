@@ -18,7 +18,7 @@
       \hfill
       \begin{minipage}[c][5ex][t]{0.5\textwidth}%
         \topskip0pt\vspace*{\fill}%
-            \hfill \resizebox{\textwidth}{!}{\insertlogo}%
+            \hfill \resizebox{\textwidth}{!}{\ifbeamertemplateempty{logo}{\includegraphics{figures/logo_w}}{\insertlogo}}%
             \vspace*{\fill}
           \end{minipage}%
       \hspace*{0.5em}%
