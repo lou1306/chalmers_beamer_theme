@@ -5,11 +5,13 @@
 
 % Title
 \setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{title}{fg=white}
 \setbeamercolor*{author}{fg=white}
+\setbeamercolor*{institute}{fg=white}
 \setbeamercolor*{date}{fg=white}
 
 % Frame
-\setbeamercolor*{frametitle}{bg=black, fg=white}
+\setbeamercolor*{frametitle}{bg=gublue, fg=white}
 \setbeamercolor*{date in head/foot}{bg=white, fg=black}
 
 % Normal Text
@@ -36,3 +38,22 @@
 \setbeamercolor{theorem title}{fg=grey_dark, bg=grey_light}
 \setbeamercolor{theorem body}{bg=grey_light}
 \mode <all>
+
+
+% Patch \maketitle to change title slide bg (and do some other sketchy stuff)
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{%
+\setbeamercolor*{background canvas}{bg=gublue}%
+\setbeamercolor*{date in head/foot}{bg=gublue, fg=gublue}
+\ifx\inserttitlegraphic\empty%
+\titlegraphic{\includegraphics[height=4em]{figures/logo_w}}%
+\fi
+{\setbeamertemplate{logo}{}\oldmaketitle}%
+\ifx\insertlogo\empty%
+\logo{\includegraphics[scale=1]{figures/logo_w}}%
+\fi
+
+\setbeamercolor*{background canvas}{bg={}}%
+\setbeamercolor*{date in head/foot}{bg=white, fg=black}
+
+}
