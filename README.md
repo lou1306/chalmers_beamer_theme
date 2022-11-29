@@ -2,7 +2,7 @@
 
 A fork of [simonpf/chalmers_beamer_theme](https://github.com/simonpf/chalmers_beamer_theme)
 that tries to imitate the most recent presentation templates from University of
-Gothenburg (GU) and Chalmers
+Gothenburg (GU) and Chalmers.
 
 ## Installation
 
