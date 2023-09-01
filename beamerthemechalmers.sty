@@ -90,3 +90,12 @@
 \setbeamerfont{structure}{family=\sffamily, series=\bfseries, size=\normalsize}
 
 \mode<all>
+
+\makeatletter
+\def\ps@navigation@titlepage{%
+  \setbeamertemplate{footline}{}
+  \setbeamertemplate{headline}{}
+  \setbeamertemplate{navigation symbols}{}
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
