@@ -99,3 +99,16 @@
   \@nameuse{ps@navigation}}
 \addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
 \makeatother
+
+\newcommand{\makeappendixtitle}[1]{%
+{
+\setbeamercolor{background canvas}{bg=MAINCOLOR}%
+\setbeamertemplate{footline}{} 
+\begin{frame}{}
+  \begin{center}
+    {\color{white}\Large #1}
+  \end{center}
+\end{frame}
+\setbeamercolor{background canvas}{bg={}}%
+}
+}
